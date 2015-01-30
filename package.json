@@ -1,0 +1,23 @@
+{
+  "name": "adapt-navigationDrawer",
+  "version": "0.0.1",
+  "description": "An Adapt Learning Framework extension that provides a sliding drawer for the navigation bar.",
+  "main": "",
+  "scripts": {
+    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JeromeLam/adapt-navigationDrawer.git"
+  },
+  "author": "JeromeLam",
+  "license": "GPL v3",
+  "bugs": {
+    "url": "https://github.com/JeromeLam/adapt-navigationDrawer/issues"
+  },
+  "devDependencies": {
+    "karma": "0.10",
+    "karma-mocha": "0.1.0",
+    "karma-expect": "1.1.0"
+  }
+}

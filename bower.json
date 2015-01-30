@@ -1,0 +1,18 @@
+{
+  "name": "adapt-navigationDrawer",
+  "version": "0.0.1",
+  "homepage": "https://github.com/JeromeLam/adapt-navigationDrawer",
+  "authors": [
+    "Jerome Lam <jerome.lam@gmail.com>"
+  ],
+  "displayName" : "Navigation Drawer",
+  "extension" : "navigationDrawer",
+  "description": "An Adapt Learning Framework extension that provides a sliding drawer for the navigation bar.",
+  "main": "/js/adapt-navigationDrawer.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-extension"
+  ],
+  "license": "GPLv3",
+  "targetAttribute": "_navigationDrawer"
+}
