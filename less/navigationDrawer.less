@@ -1,9 +1,43 @@
 /*
-* adapt-navigationDrawer
-* License - https://github.com/JeromeLam/adapt-navigationDrawer/blob/master/LICENSE
-* Maintainers - Jerome Lam <jerome.lam@gmail.com>
-*/
+ * adapt-navigationDrawer
+ * License - https://github.com/JeromeLam/adapt-navigationDrawer/blob/master/LICENSE
+ * Maintainers - Jerome Lam <jerome.lam@gmail.com>
+ */
 
-.extension {
-    
+ // Styling navigation drawer.
+ @navigationDrawer-height: 50px;
+ @navigationDrawer-height-mobile: 0px;
+ @navigationDrawer-bg-color: @primary-color;
+ @navigationDrawer-border: @navigation-border;
+
+.navigationDrawer {
+
+    position: fixed;
+    bottom: -1 * @navigationDrawer-height;
+    z-index: 200;
+
+    display: none;
+    height: @navigationDrawer-height;
+
+    background-color: @navigationDrawer-bg-color;
+
+    -webkit-transform: translate(0px);
+    -moz-transform: translate(0px);
+    -o-transform: translate(0px);
+    transform: translate(0px);
+    -webkit-transition: -webkit-transform 400ms ease;
+    -moz-transition: -moz-transform 400ms ease;
+    -o-transition: -o-transform 400ms ease;
+    transition: transform 400ms ease;
+    -webkit-transition-property: -webkit-transform,left,right;
+    -webkit-backface-visibility: hidden;
+
+    &.active {
+      display: block;
+      transform: translateY(-1 * @navigationDrawer-height);
+
+      html.has-bottomnavigation & {
+        transform: translateY(-1 * (@navigationDrawer-height + @bottomnavigation-height));
+      }
+    }
 }
