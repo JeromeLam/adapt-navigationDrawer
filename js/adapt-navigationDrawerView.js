@@ -35,7 +35,7 @@ define(function(require) {
         },
 
         postRender: function() {}
-s
+
     });
 
     return NavigationDrawerView;
