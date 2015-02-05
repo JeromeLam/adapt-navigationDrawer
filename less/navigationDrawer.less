@@ -18,8 +18,11 @@
 
     display: none;
     height: @navigationDrawer-height;
+    width: 100%;
 
     background-color: @navigationDrawer-bg-color;
+
+    color: @foreground-color;
 
     -webkit-transform: translate(0px);
     -moz-transform: translate(0px);
@@ -39,5 +42,10 @@
       html.has-bottomnavigation & {
         transform: translateY(-1 * (@navigationDrawer-height + @bottomnavigation-height));
       }
+    }
+
+    .navigationDrawer-inner {
+        display: block;
+        padding: 5px;
     }
 }
