@@ -1,4 +1,4 @@
-#adapt-navigationDrawer
+#adapt-navigationDrawer [![Build Status](https://travis-ci.org/JeromeLam/adapt-navigationDrawer.svg?branch=master)](https://travis-ci.org/JeromeLam/adapt-navigationDrawer)
 
 An Adapt Learning Framework extension that provides a sliding drawer for the navigation bar.
 
