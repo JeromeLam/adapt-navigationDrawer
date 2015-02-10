@@ -13,10 +13,8 @@
 .navigationDrawer {
 
     position: fixed;
-    bottom: -1 * @navigationDrawer-height;
     z-index: 200;
 
-    display: none;
     height: @navigationDrawer-height;
     width: 100%;
 
@@ -35,12 +33,15 @@
     -webkit-transition-property: -webkit-transform,left,right;
     -webkit-backface-visibility: hidden;
 
+    &.open-from-top {
+        transform: translateY(@navigationDrawer-height);
+    }
+    &.open-from-bottom {
+        transform: translateY(-1 * @navigationDrawer-height);
+    }
     &.active {
-      display: block;
-      transform: translateY(-1 * @navigationDrawer-height);
-
-      html.has-bottomnavigation & {
-        transform: translateY(-1 * (@navigationDrawer-height + @bottomnavigation-height));
+      &.open-from-top, &.open-from-bottom {
+          transform: translateY(0px);
       }
     }
 
