@@ -24,4 +24,4 @@ N/A
 
 ##Browser spec
 
-N/A
+The browser must support CSS3 transitions and transformations.
