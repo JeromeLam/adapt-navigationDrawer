@@ -15,6 +15,7 @@ define(function(require) {
         initialize: function() {
             this.listenTo(Adapt, 'navigationDrawer:open', this.show);
             this.listenTo(Adapt, 'navigationDrawer:close', this.hide);
+            this.listenTo(Adapt, 'navigationDrawer:toggle', this.toggle);
             this.preRender();
             this.render();
         },
@@ -54,6 +55,8 @@ define(function(require) {
 
             var navigationDrawerView = new NavigationDrawerView({model: new Backbone.Model({})});
             this.$('.navigationDrawer-inner').html(navigationDrawerView.$el.html());
+
+            Adapt.navigationDrawerControl = new navigationDrawerControl({ model: this.model });
         },
 
         show: function() {
@@ -61,12 +64,54 @@ define(function(require) {
         },
         hide: function() {
             this.$el.removeClass('active');
+        },
+        toggle: function() {
+            this.$el.toggleClass('active');
         }
     });
 
-    Adapt.once("app:dataReady", function() {
-        new navigationDrawer({ model: new Backbone.Model(Adapt.course.get("_navigationDrawer")) });
+    var navigationDrawerControl = Backbone.View.extend({
+
+        tagName: 'a',
+
+        className: 'navigation-drawer-control',
+
+        initialize: function() {
+            this.listenTo(Adapt, 'remove', this.remove);
+            this.$el.attr('href', '#');
+            this.preRender();
+            this.render();
+            this.postRender();
+        },
+
+        events: {
+            'click': 'trigger'
+        },
+
+        preRender: function() {},
+
+        render: function() {
+            var template = Handlebars.templates["navigationDrawerControl"];
+            this.$el.html(template());
+
+            if (this.model.get("_display")) {
+                var appendControlToSelector = $(this.model.get("_display").appendControlToSelector);
+                appendControlToSelector.append(this.$el);
+            }
+
+            return this;
+        },
+
+        postRender: function() {},
+
+        trigger: function(event) {
+            event.preventDefault();
+            Adapt.trigger("navigationDrawer:toggle");
+        }
+
     });
 
-    Adapt.navigationDrawer = navigationDrawer;
+    Adapt.once("app:dataReady", function() {
+        Adapt.navigationDrawer = new navigationDrawer({ model: new Backbone.Model(Adapt.course.get("_navigationDrawer")) });
+    });
 });
