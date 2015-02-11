@@ -13,8 +13,6 @@ define(function(require) {
     var navigationDrawer = Backbone.View.extend({
 
         initialize: function() {
-            this.listenTo(Adapt, 'navigationDrawer:open', this.show);
-            this.listenTo(Adapt, 'navigationDrawer:close', this.hide);
             this.listenTo(Adapt, 'navigationDrawer:toggle', this.toggle);
             this.preRender();
             this.render();
@@ -59,15 +57,10 @@ define(function(require) {
             Adapt.navigationDrawerControl = new navigationDrawerControl({ model: this.model });
         },
 
-        show: function() {
-            this.$el.addClass('active');
-        },
-        hide: function() {
-            this.$el.removeClass('active');
-        },
         toggle: function() {
             this.$el.toggleClass('active');
         }
+
     });
 
     var navigationDrawerControl = Backbone.View.extend({
