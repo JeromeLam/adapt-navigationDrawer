@@ -1,0 +1,17 @@
+// Add to course.json so navigationDrawer opens below the main navigation bar.
+"_navigationDrawer": {
+    "_display": {
+        "elementSelector": "#wrapper .navigation",
+        "openFrom": "bottom",
+        "appendControlToSelector": "#wrapper .navigation"
+    }
+}
+
+// Add to course.json so navigationDrawer opens above the bottomnavigation extension.
+"_navigationDrawer": {
+    "_display": {
+        "elementSelector": ".bottomnavigation",
+        "openFrom": "top",
+        "appendControlToSelector": ".bottomnavigation"
+    }
+}
