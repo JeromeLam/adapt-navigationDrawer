@@ -12,7 +12,7 @@ Once installed, the navigationDrawer extension can be used to provide a sliding 
 
 ##Settings overview
 
-TODO
+A complete example of this extension's settings can be found in the [example.json](https://github.com/JeromeLam/adapt-navigationDrawer/blob/master/example.json) file.
 
 ### Data description
 
