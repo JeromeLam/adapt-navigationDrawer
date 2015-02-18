@@ -12,6 +12,6 @@
     "_display": {
         "elementSelector": ".bottomnavigation",
         "openFrom": "top",
-        "appendControlToSelector": ".bottomnavigation"
+        "appendControlToSelector": ".bottomnavigation .navigation-inner"
     }
 }
